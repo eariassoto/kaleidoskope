@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kaleidoskope-lexer", "kaleidoskope-lexer\kaleidoskope-lexer.vcxproj", "{91A98438-8E30-49C0-BE52-FA05CB8AF091}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kaleidoscope-lex", "kaleidoscope-lex\kaleidoscope-lex.vcxproj", "{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kaleidoscope-sample", "kaleidoscope-sample\kaleidoscope-sample.vcxproj", "{ACEB961E-751C-4935-9DF5-856828CFBC2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,22 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Debug|x64.ActiveCfg = Debug|x64
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Debug|x64.Build.0 = Debug|x64
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Debug|x86.ActiveCfg = Debug|Win32
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Debug|x86.Build.0 = Debug|Win32
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Release|x64.ActiveCfg = Release|x64
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Release|x64.Build.0 = Release|x64
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Release|x86.ActiveCfg = Release|Win32
-		{91A98438-8E30-49C0-BE52-FA05CB8AF091}.Release|x86.Build.0 = Release|Win32
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Debug|x64.ActiveCfg = Debug|x64
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Debug|x64.Build.0 = Debug|x64
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Debug|x86.ActiveCfg = Debug|Win32
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Debug|x86.Build.0 = Debug|Win32
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Release|x64.ActiveCfg = Release|x64
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Release|x64.Build.0 = Release|x64
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Release|x86.ActiveCfg = Release|Win32
+		{D43EF0F8-80E2-4BF2-B566-AC51E9BED90C}.Release|x86.Build.0 = Release|Win32
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Debug|x64.ActiveCfg = Debug|x64
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Debug|x64.Build.0 = Debug|x64
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Debug|x86.Build.0 = Debug|Win32
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Release|x64.ActiveCfg = Release|x64
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Release|x64.Build.0 = Release|x64
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Release|x86.ActiveCfg = Release|Win32
+		{ACEB961E-751C-4935-9DF5-856828CFBC2C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
