@@ -6,27 +6,27 @@ namespace kaleidoscope
 	static std::string identifierStr;
 	static double numVal;
 
-	const char* Lexer::tokenToString(kTokens token)
+	const char* Lexer::tokenToString(kTokenType token)
 	{
 		switch (token)
 		{
-		case kTokens::TOKEN_EOF:
+		case kTokenType::TOKEN_EOF:
 			return "EOF";
-		case kTokens::TOKEN_DEF:
+		case kTokenType::TOKEN_DEF:
 			return "DEF";
-		case kTokens::TOKEN_EXTERN:
+		case kTokenType::TOKEN_EXTERN:
 			return "EXTERN";
-		case kTokens::TOKEN_IDENTIFIER:
+		case kTokenType::TOKEN_IDENTIFIER:
 			return "ID";
-		case kTokens::TOKEN_NUMBER:
+		case kTokenType::TOKEN_NUMBER:
 			return "NUM";
-		case kTokens::TOKEN_INVALID:
+		case kTokenType::TOKEN_INVALID:
 			return "INVALID";
 		}
 		return "";
 	}
 
-	kTokens Lexer::getToken(std::istream& input)
+	kTokenType Lexer::getToken(std::istream& input)
 	{
 		static int lastChar = ' ';
 		while (isspace(lastChar))
@@ -39,10 +39,10 @@ namespace kaleidoscope
 				identifierStr += lastChar;
 
 			if (identifierStr == "def")
-				return kTokens::TOKEN_DEF;
+				return kTokenType::TOKEN_DEF;
 			if (identifierStr == "extern")
-				return kTokens::TOKEN_EXTERN;
-			return kTokens::TOKEN_IDENTIFIER;
+				return kTokenType::TOKEN_EXTERN;
+			return kTokenType::TOKEN_IDENTIFIER;
 		}
 		else if (isdigit(lastChar) || lastChar == '.')
 		{   // Number: [0-9.]+
@@ -53,7 +53,7 @@ namespace kaleidoscope
 			} while (isdigit(lastChar) || lastChar == '.');
 
 			numVal = strtod(NumStr.c_str(), 0);
-			return kTokens::TOKEN_NUMBER;
+			return kTokenType::TOKEN_NUMBER;
 		}
 		else if (lastChar == '#')
 		{
@@ -68,20 +68,20 @@ namespace kaleidoscope
 		}
 		else if (lastChar == EOF)
 		{
-			return kTokens::TOKEN_EOF;
+			return kTokenType::TOKEN_EOF;
 		}
-		return kTokens::TOKEN_INVALID;
+		return kTokenType::TOKEN_INVALID;
 	}
 
-	std::vector<kTokens> Lexer::readTokens(std::istream& input)
+	std::vector<kTokenType> Lexer::readTokens(std::istream& input)
 	{
-		std::vector<kTokens> tokens;
-		kTokens currentToken = kTokens::TOKEN_EOF;
+		std::vector<kTokenType> tokens;
+		kTokenType currentToken = kTokenType::TOKEN_EOF;
 		do
 		{
 			currentToken = getToken(input);
 			tokens.push_back(currentToken);
-		} while (currentToken != kTokens::TOKEN_EOF);
+		} while (currentToken != kTokenType::TOKEN_EOF);
 		return tokens;
 	}
 

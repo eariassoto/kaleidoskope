@@ -18,9 +18,15 @@
     <ClInclude Include="..\source\include\lexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\include\tokens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\src\lexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\src\tokens.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
