@@ -25,23 +25,27 @@ namespace kaleidoscope
 	public:
 		kTokenClass getTokenClass() const;
 		kTokenType getTokenType() const;
+		virtual const std::string toString() const = 0;
 	protected:
 		Token(kTokenClass _tokenClass, kTokenType _tokenType);
+
+		kTokenType mTokenType;
 	private:
 		kTokenClass mTokenClass;
-		kTokenType mTokenType;
 	};
 
 	class SimpleToken : public Token
 	{
 	public:
 		SimpleToken(kTokenType _tokenType);
+		const std::string toString() const;
 	};
 
 	class StringToken : public Token
 	{
 	public:
 		StringToken(kTokenType _tokenType, const std::string &_string);
+		const std::string toString() const;
 	private:
 		std::string mString;
 	};
@@ -50,6 +54,7 @@ namespace kaleidoscope
 	{
 	public:
 		NumberToken(kTokenType _tokenType, double _number);
+		const std::string toString() const;
 	private:
 		double mNumber;
 	};

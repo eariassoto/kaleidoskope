@@ -2,6 +2,75 @@
 
 namespace kaleidoscope
 {
+
+	const char* tokenToString(kTokenType token)
+	{
+		switch (token)
+		{
+		case kTokenType::TOKEN_EOF:
+			return "EOF";
+		case kTokenType::TOKEN_DEF:
+			return "DEF";
+		case kTokenType::TOKEN_EXTERN:
+			return "EXTERN";
+		case kTokenType::TOKEN_IDENTIFIER:
+			return "ID";
+		case kTokenType::TOKEN_NUMBER:
+			return "NUM";
+		case kTokenType::TOKEN_INVALID:
+			return "INVALID";
+		}
+		return "";
+	}
+
+	const std::string SimpleToken::toString() const
+	{
+		std::string str{"{ "};
+		switch (mTokenType)
+		{
+		case kTokenType::TOKEN_EOF:
+			str += "EOF";
+			break;
+		case kTokenType::TOKEN_DEF:
+			str += "DEF";
+			break;
+		case kTokenType::TOKEN_EXTERN:
+			str += "EXTERN";
+			break;
+		case kTokenType::TOKEN_INVALID:
+			str += "INVALID";
+			break;
+		}
+		str += " }";
+		return str;
+	}
+
+	const std::string StringToken::toString() const
+	{
+		std::string str{ "{ " };
+		switch (mTokenType)
+		{
+		case kTokenType::TOKEN_IDENTIFIER:
+			str += "ident: " + mString;
+			break;
+		}
+		str += " }";
+		return str;
+	}
+
+	const std::string NumberToken::toString() const
+	{
+		std::string str{ "{ " };
+		switch (mTokenType)
+		{
+		case kTokenType::TOKEN_NUMBER:
+			str += "num: " + std::to_string(mNumber);
+			break;
+		}
+		str += " }";
+		return str;
+	}
+
 	Token::Token(kTokenClass _tokenClass, kTokenType _tokenType)
 		: mTokenClass{ _tokenClass },
 		mTokenType { _tokenType } {}

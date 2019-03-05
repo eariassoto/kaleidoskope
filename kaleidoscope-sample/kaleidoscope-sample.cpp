@@ -6,12 +6,17 @@
 
 int main()
 {
-	std::string input{ "extern abc\ndef abc" };
+	std::string input{ "extern abc\ndef abc\n123" };
 	std::istringstream inputStream(input);
 
-	std::vector<kaleidoscope::kTokenType> vec = kaleidoscope::Lexer::readTokens(inputStream);
-	for (const kaleidoscope::kTokenType tok : vec)
+	kaleidoscope::Lexer lex;
+	std::vector<kaleidoscope::Token*> vec2 = lex.readTokens(inputStream);
+	for (const kaleidoscope::Token* tok : vec2)
 	{
-		std::cout << kaleidoscope::Lexer::tokenToString(tok) << ' ';
+		std::cout << tok->toString() << ' ';
+	}
+	for (const kaleidoscope::Token* tok : vec2)
+	{
+		delete tok;
 	}
 }

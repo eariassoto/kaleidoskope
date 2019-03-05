@@ -8,10 +8,12 @@ namespace kaleidoscope
 	class Lexer
 	{
 	public:
-		static std::vector<kTokenType> readTokens(std::istream& input);
-		static const char* tokenToString(kTokenType token);
+		std::vector<Token*> readTokens(std::istream& input);
+
 	private:
-		static kTokenType getToken(std::istream& input);
+		Token* parseAlphaToken(std::istream& input);
+		Token* parseNumericToken(std::istream& input);
+		Token* getToken(std::istream& input);
 	};
 
 } // namespace kaleidoscope
