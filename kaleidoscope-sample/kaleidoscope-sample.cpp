@@ -6,7 +6,7 @@
 
 int main()
 {
-	std::string input{ "extern abc\ndef abc\n123" };
+	std::string input{ "extern abc\ndef abc\n123 + 12" };
 	std::istringstream inputStream(input);
 
 	kaleidoscope::Lexer lex;
