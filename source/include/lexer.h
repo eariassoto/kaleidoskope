@@ -11,9 +11,9 @@ namespace kaleidoscope
 		std::vector<Token*> readTokens(std::istream& input);
 
 	private:
-		Token* parseAlphaToken(std::istream& input);
-		Token* parseNumericToken(std::istream& input);
-		Token* getToken(std::istream& input);
+		Token* parseAlphaToken(const std::string& token);
+		Token* parseNumericToken(const std::string& token);
+		Token* parseCharToken(char token);
 	};
 
 } // namespace kaleidoscope

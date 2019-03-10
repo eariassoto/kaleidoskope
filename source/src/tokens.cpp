@@ -2,27 +2,6 @@
 
 namespace kaleidoscope
 {
-
-	const char* tokenToString(kTokenType token)
-	{
-		switch (token)
-		{
-		case kTokenType::TOKENTYPE_EOF:
-			return "EOF";
-		case kTokenType::TOKENTYPE_DEF:
-			return "DEF";
-		case kTokenType::TOKENTYPE_EXTERN:
-			return "EXTERN";
-		case kTokenType::TOKENTYPE_IDENTIFIER:
-			return "ID";
-		case kTokenType::TOKENTYPE_NUMBER:
-			return "NUM";
-		case kTokenType::TOKENTYPE_INVALID:
-			return "INVALID";
-		}
-		return "";
-	}
-
 	Token::Token(kTokenClass _tokenClass, kTokenType _tokenType)
 		: mTokenClass{ _tokenClass },
 		mTokenType { _tokenType } {}
@@ -98,7 +77,10 @@ namespace kaleidoscope
 		std::string str{ "{ " };
 		switch (mTokenType)
 		{
-		case kTokenType::TOKENTYPE_OPERATOR:
+		case kTokenType::TOKENTYPE_ADD:
+		case kTokenType::TOKENTYPE_SUB:
+		case kTokenType::TOKENTYPE_MUL:
+		case kTokenType::TOKENTYPE_DIV:
 			str += "op: ";
 			str += mChar;
 			break;
@@ -144,7 +126,10 @@ namespace kaleidoscope
 	{
 		switch (_tokenType)
 		{
-		case kTokenType::TOKENTYPE_OPERATOR:
+		case kTokenType::TOKENTYPE_ADD:
+		case kTokenType::TOKENTYPE_SUB:
+		case kTokenType::TOKENTYPE_MUL:
+		case kTokenType::TOKENTYPE_DIV:
 			return new CharToken(_tokenType, _char);
 		}
 		return nullptr;
